@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EndGame | Your Execution Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #050505; color: white; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at top right, #1e3a8a, transparent); }
+  
+    /* Infinite Marquee Animation Logic for logos */
+/* Infinite Marquee Animation Logic */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.group-hover\:pause:hover {
+    animation-play-state: paused;
+}
+
+/* Ensure smooth movement on mobile */
+@media (max-width: 768px) {
+    .animate-marquee {
+        animation-duration: 15s;
+    }
+}
+    
+
+/*VIDEO MIMIC*/
+@keyframes video-flash {
+    0%, 30% { opacity: 1; transform: scale(1); }
+    33%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+.animate-video-flash {
+    animation: video-flash 6s infinite;
+    opacity: 0;
+}
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md">
+        <div class="text-2xl font-bold tracking-tighter">endgame</div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70">
+            <a href="#" class="hover:opacity-100 transition">Services</a>
+            <a href="#" class="hover:opacity-100 transition">Our Results</a>
+            <a href="#" class="hover:opacity-100 transition">Who We Work With</a>
+        </div>
+        <button class="bg-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition">Book Consultation</button>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-gradient bg-[#050505]">
+    <div class="container mx-auto px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="z-10">
+            <h3 class="text-blue-400 font-semibold mb-4 tracking-widest uppercase">Strategy • Execution • Results</h4>
+            <h2 class="text-6xl md:text-7xl font-bold leading-tight mb-6 text-white">
+                Your Execution Partner <span class="italic text-blue-500">for Strategy</span>, <br>
+                Creative Marketing<span class="underline"> and Technology.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-lg mb-8 leading-relaxed">
+                A world-class execution engine for leaders who cannot afford to be slow.We operate as a seamless extension of your team.
+            </p>
+            <div class="flex gap-4">
+                <button class="bg-white text-black px-8 py-4 rounded-lg font-bold hover:invert transition shadow-lg">Get Started</button>
+                <button class="border border-white/20 px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition text-white">View Portfolio</button>
+            </div>
+        </div>
+
+        <div class="relative h-[700px] flex gap-4 justify-center overflow-hidden mask-fade">
+            <div class="flex flex-col gap-4 animate-scroll-up">
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+            </div>
+
+            <div class="flex flex-col gap-4 animate-scroll-down mt-12">
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+            </div>
+
+            <div class="flex flex-col gap-4 animate-scroll-up-delayed mt-4">
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+                <div class="w-32 h-44 lg:w-40 lg:h-52 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80" class="object-cover h-full w-full"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 border-y border-white/5 overflow-hidden group">
+    <p class="text-center text-[10px] tracking-[0.4em] uppercase opacity-30 mb-12">Trusted by 150+ global brands</p>
+    
+    <div class="flex overflow-hidden relative border-y border-white/5 py-4">
+        <div class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-12 lg:gap-24 opacity-40 grayscale contrast-125 group-hover:pause">
+             <span class="text-2xl font-black tracking-tighter">ZARA</span>
+             <span class="text-2xl font-black tracking-tighter">MDS</span>
+             <span class="text-2xl font-black tracking-tighter">RENERGE</span>
+             <span class="text-2xl font-black tracking-tighter">ELYSIUM</span>
+             <span class="text-2xl font-black tracking-tighter">MACARTHUR</span>
+             <span class="text-2xl font-black tracking-tighter">PUBLIC LEADERS</span>
+        </div>
+
+        <div class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-12 lg:gap-24 opacity-40 grayscale contrast-125 group-hover:pause">
+             <span class="text-2xl font-black tracking-tighter">ZARA</span>
+             <span class="text-2xl font-black tracking-tighter">MDS</span>
+             <span class="text-2xl font-black tracking-tighter">RENERGE</span>
+             <span class="text-2xl font-black tracking-tighter">ELYSIUM</span>
+             <span class="text-2xl font-black tracking-tighter">MACARTHUR</span>
+             <span class="text-2xl font-black tracking-tighter">PUBLIC LEADERS</span>
+        </div>
+    </div>
+</section>
+
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl lg:text-6xl font-bold mb-20 text-center">What you can achieve</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-3xl hover:bg-white/10 transition group">
+                <div class="text-blue-500 text-4xl mb-6 font-bold">30-50%</div>
+                <h3 class="text-xl font-bold mb-4">Lower Operational Cost</h3>
+                <p class="text-gray-400">Reduce overhead compared to hiring full-time specialists while maintaining elite quality.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl hover:bg-white/10 transition group border-blue-500/30">
+                <div class="text-blue-500 text-4xl mb-6 font-bold">30 Days</div>
+                <h3 class="text-xl font-bold mb-4">Idea to MVP</h3>
+                <p class="text-gray-400">Our Jumpstart Engine takes you from concept to a live product in exactly one month.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl hover:bg-white/10 transition group">
+                <div class="text-blue-500 text-4xl mb-6 font-bold">Millions</div>
+                <h3 class="text-xl font-bold mb-4">National-scale Reach</h3>
+                <p class="text-gray-400">Communication systems built to handle millions of interactions with zero friction.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="relative min-h-screen flex items-center pt-32 pb-20 px-6 lg:px-20 bg-[#f9f9f9] text-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div class="z-10">
+            <div class="flex items-center gap-4 mb-8 opacity-60">
+                <span class="text-xs font-bold tracking-[0.2em] uppercase">Strategy.</span>
+                <span class="text-xs font-bold tracking-[0.2em] uppercase">Execution.</span>
+                <span class="text-xs font-bold tracking-[0.2em] uppercase">Results.</span>
+                <div class="h-[1px] w-24 bg-current"></div>
+            </div>
+            
+            <h1 class="text-5xl lg:text-7xl font-light leading-[1.1] mb-8">
+                Where you bring the <span class="italic font-normal">ambition</span>, <br>
+                Endgame brings the <span class="font-bold">execution engine.</span>
+            </h1>
+            
+            <p class="text-lg text-gray-600 max-w-lg mb-12 leading-relaxed">
+                A world-class execution engine for leaders who cannot afford to be slow. 
+                Endgame operates as a seamless extension of your team, deploying the strategy, technology, creative, and marketing capabilities required to move from planning to performance, fast. [cite: 19]
+            </p>
+            
+            <button class="bg-[#1e40af] hover:bg-blue-800 text-white px-10 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-900/20 active:scale-95">
+                Book a demo
+            </button>
+        </div>
+
+        <div class="relative group">
+            <div class="relative aspect-video rounded-2xl overflow-hidden bg-blue-700 shadow-2xl border-4 border-white">
+                
+                <div class="absolute inset-y-0 left-0 w-1/2 p-8 flex flex-col justify-center space-y-2 z-10 pointer-events-none">
+                    <span class="text-[8px] font-bold tracking-[0.3em] uppercase opacity-70 text-white">The World's Top</span>
+                    <div class="text-white/40 text-sm font-bold italic space-y-1 uppercase leading-tight">
+                        <p>Creatives</p>
+                        <p>Designers</p>
+                        <p>Writers</p>
+                        <p>Strategists</p>
+                        <p class="text-white text-lg not-italic font-black">Project Managers</p>
+                        <p>Growth Gurus</p>
+                        <p>Revenue Whisperers</p>
+                        <p>Imagination</p>
+                    </div>
+                </div>
+
+                <div class="absolute inset-y-0 right-0 w-1/2 overflow-hidden grid grid-cols-2 gap-1 p-1">
+                    <div class="relative h-full w-full bg-zinc-800 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" class="absolute w-full h-full object-cover animate-video-flash">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80" class="absolute w-full h-full object-cover animate-video-flash [animation-delay:2s]">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" class="absolute w-full h-full object-cover animate-video-flash [animation-delay:4s]">
+                    </div>
+                    <div class="grid grid-rows-2 gap-1">
+                        <div class="bg-zinc-800 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80" class="w-full h-full object-cover"></div>
+                        <div class="bg-zinc-800 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80" class="w-full h-full object-cover"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 flex items-center justify-center z-20">
+                    <div class="w-16 h-16 bg-[#fbbf24] rounded-sm flex items-center justify-center cursor-pointer hover:scale-110 transition shadow-2xl">
+                        <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl z-30 hidden lg:block border border-gray-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white font-bold">✓</div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase opacity-40">Status</p>
+                        <p class="text-xs font-bold text-gray-800">Ready to Execute</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="bg-blue-700 py-24">
+        <div class="container mx-auto px-8">
+            <h2 class="text-center text-4xl font-bold mb-16">Our Results Speak</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="text-6xl font-bold">$10M+</div>
+                    <p class="text-blue-200 mt-2">Capital raised for our clients</p>
+                </div>
+                <div>
+                    <div class="text-6xl font-bold">150+</div>
+                    <p class="text-blue-200 mt-2">Top global brands trusted</p>
+                </div>
+                <div>
+                    <div class="text-6xl font-bold">500m+</div>
+                    <p class="text-blue-200 mt-2">Reach across digital platforms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-blue-700 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <h4 class="text-center text-[10px] tracking-[0.4em] uppercase opacity-80 mb-6">The Endgame Advantage</h4>
+        <h2 class="text-center text-2xl lg:text-4xl font-light leading-relaxed max-w-5xl mx-auto mb-20 italic">
+            Our mission is to enable <span class="font-bold not-italic">People, Businesses, Institutions & Non-Profits</span> shaping the future to build, launch and grow, increase their reach & impact and thrive in today’s competitive landscape. 
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <div class="flex flex-col h-full bg-[#38bdf8] rounded-2xl overflow-hidden text-black transition-transform shadow-lg hover:shadow-2xl hover:-translate-y-2">
+                <div class="h-64 bg-zinc-800">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-light italic mb-4">Elite <span class="font-bold not-italic">Global Talent</span></h3>
+                    <p class="text-sm leading-relaxed opacity-90">Strategists, engineers, creatives, and operators across New York, London, Paris, Lagos, and Toronto.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col h-full bg-[#bae6fd] rounded-2xl overflow-hidden text-black transition-transform shadow-lg hover:shadow-2xl hover:-translate-y-2">
+                <div class="h-64 bg-zinc-800">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-light italic mb-4">Acceleration <span class="font-bold not-italic">Engines</span></h3>
+                    <p class="text-sm leading-relaxed opacity-90">Bespoke execution teams configured to deliver results with exceptional speed and consistency.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col h-full bg-[#fbbf24] rounded-2xl overflow-hidden text-black transition-transform shadow-lg hover:shadow-2xl hover:-translate-y-2">
+                <div class="h-64 bg-zinc-800">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-light italic mb-4">Intelligent <span class="font-bold not-italic">Systems</span></h3>
+                    <p class="text-sm leading-relaxed opacity-90">AI-enabled workflows and digital infrastructure that dramatically improve output and reduce cost.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden text-black transition-transform shadow-lg hover:shadow-2xl hover:-translate-y-2">
+                <div class="h-64 bg-zinc-800">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-light italic mb-4">Adaptive <span class="font-bold not-italic">Pricing</span></h3>
+                    <p class="text-sm leading-relaxed opacity-90">Engagement models built around your goals: sprint projects, monthly retainers, or full execution partnerships.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="bg-zinc-950 py-32 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-5xl font-bold mb-8">Ready to execute?</h2>
+                <p class="text-xl text-gray-500 mb-12">Ambition deserves world-class execution. If you're ready to scale, we're ready to build.</p>
+                <button class="bg-blue-600 text-white px-12 py-5 rounded-full font-bold text-lg shadow-2xl shadow-blue-500/20">Book Private Consultation</button>
+            </div>
+            <div class="grid grid-cols-2 gap-10">
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase opacity-30 mb-6">Who we work with</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li>International NGOs</li>
+                        <li>Ambitious SMEs</li>
+                        <li>Fast-growth Startups</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase opacity-30 mb-6">Capabilities</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li>Strategy & AI</li>
+                        <li>Systems Design</li>
+                        <li>Creative Marketing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-32 pt-10 border-t border-white/5 flex justify-between items-center opacity-30 text-[10px] font-bold tracking-widest">
+            <span>© 2024 ENDGAME SYSTEMS. ALL RIGHTS RESERVED.</span>
+            <span>BUILDING THE FUTURE.</span>
+        </div>
+    </footer>
+
+
+
+    <style>
+    /* Infinite Scroll Up Animation */
+    @keyframes scroll-up {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
+
+    /* Infinite Scroll Down Animation */
+    @keyframes scroll-down {
+        0% { transform: translateY(-50%); }
+        100% { transform: translateY(0); }
+    }
+
+    .animate-scroll-up {
+        animation: scroll-up 20s linear infinite;
+    }
+
+    .animate-scroll-down {
+        animation: scroll-down 20s linear infinite;
+    }
+
+    /* Third column slightly delayed for a more fluid feel */
+    .animate-scroll-up-delayed {
+        animation: scroll-up 25s linear infinite;
+    }
+
+    /* Professional Fade effect at the top and bottom of the images */
+    .mask-fade {
+        mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    }
+
+    .hero-gradient {
+        background: radial-gradient(circle at top right, #1e3a8a, #050505);
+    }
+
+    </style>
+
+</body>
+</html>
