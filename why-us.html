@@ -50,20 +50,19 @@
 </head>
 <body>
 
-       <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md">
-        <div class="text-2xl font-bold tracking-tighter">endgame</div>
-        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70">
+      <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="text-2xl font-bold tracking-tighter italic text-endgame-blue"><a href="index.html">endgame</a></div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70 font-bold">
+            <a href="index.html" class="hover:text-endgame-blue transition">Home</a>
+            <a href="about.html" class="hover:text-endgame-blue transition">About</a>
             <a href="services.html" class="hover:opacity-100 transition">Services</a>
-            <a href="/about.html" class="hover:opacity-100 transition">Who We Are</a>
-            <a href="/why-us.html" class="hover:opacity-100 transition">Why Us</a>
-            <a href="#" class="hover:opacity-100 transition">Who We Work With</a>
+            <a href="case-study.html" class="hover:opacity-100 transition">Case Studies</a>
+            <a href="portfolio.html" class="hover:opacity-100 transition">Portfolio Compsnies</a>
         </div>
-        <a href="contact.html">
-    <button class="bg-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition">
-        Book Consultation
-    </button>
-</a>
+        </div>
+        <button class="bg-endgame-blue text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition text-sm">Book Consultation</button>
     </nav>
+
 
     <section class="pt-40 pb-20 bg-[#fcfcf9]">
         <div class="container mx-auto px-8">
@@ -185,7 +184,7 @@
         </div>
     </section>
 
-   <footer class="relative bg-black text-white pt-24 pb-12 border-t border-white/5 overflow-hidden">
+  <footer class="relative bg-black text-white pt-24 pb-12 border-t border-white/5 overflow-hidden">
     <div class="absolute inset-0 z-0 opacity-30">
         <img src="footer-bg.png" class="w-full h-full object-cover" alt="Footer Background">
     </div>
@@ -217,15 +216,23 @@
                 <div>
     <h5 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Navigation</h5>
     <ul class="space-y-4 text-sm text-gray-400">
+
+          <li>
+            <a href="/" class="hover:text-white transition">Home</a>
+        </li>
         <li>
             <a href="services.html" class="hover:text-white transition">Our Services</a>
+        </li>
+          <li>
+            <a href="case-study.html" class="hover:text-white transition">Case Studies</a>
+        </li>
+          <li>
+            <a href="portfolio.html" class="hover:text-white transition">Portfolio Companies</a>
         </li>
         <li>
             <a href="why-us.html" class="hover:text-white transition">Why Us</a>
         </li>
-        <li>
-            <a href="case-study.html" class="hover:text-white transition">Case Studies</a>
-        </li>
+      
         <li>
             <a href="about.html" class="hover:text-white transition">About Us</a>
         </li>
@@ -238,12 +245,13 @@
             <p class="text-[10px] tracking-widest uppercase font-bold">&copy; 2026 ENDGAME. ALL RIGHTS RESERVED.</p>
             <div class="flex gap-8 text-[10px] tracking-widest uppercase font-bold">
                 <a href="#" class="hover:text-white transition">LinkedIn</a>
-                <a href="#" class="hover:text-white transition">X / Twitter</a>
-                <a href="#" class="hover:text-white transition">Instagram</a>
+                <a href="https://x.com/endgamehq" class="hover:text-white transition">X / Twitter</a>
+                <a href="https://www.instagram.com/endgamehq/" class="hover:text-white transition">Instagram</a>
             </div>
         </div>
     </div>
 </footer>
+
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

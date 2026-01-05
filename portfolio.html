@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Endgame Execution Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio Card Effects */
+        .portfolio-card {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .portfolio-card:hover {
+            transform: scale(1.02) translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(59, 130, 246, 0.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Filtering Animation */
+        .grid-item { transition: all 0.5s ease; }
+        .grid-item.hidden { display: none; opacity: 0; transform: scale(0.8); }
+
+        /* Floating Blobs */
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 50px); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+    </style>
+</head>
+<body class="selection:bg-blue-500 selection:text-white">
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5">
+        <div class="text-2xl font-bold tracking-tighter italic"><a href="index.html">endgame</a></div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-bold opacity-70">
+            <a href="index.html" class="hover:text-blue-500 transition">Home</a>
+            <a href="services.html" class="hover:text-blue-500 transition">Services</a>
+            <a href="portfolio.html" class="text-blue-500">Portfolio</a>
+            <a href="contact.html" class="hover:text-blue-500 transition">Contact</a>
+        </div>
+        <a href="contact.html" class="bg-blue-600 px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-blue-500 transition">Start Project</a>
+    </nav>
+
+    <section class="relative pt-48 pb-20 overflow-hidden">
+        <div class="blob" style="top: -10%; right: -10%;"></div>
+        <div class="container mx-auto px-8 text-center">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight" data-aos="fade-up">
+                Our Work Speaks <br> <span class="text-gradient italic">Louder Than Words.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
+                Over 150 projects delivered across 12 countries. Every brand transformed. Every platform launched. Every campaign that moved millions. This is the proof.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 bg-white/5 backdrop-blur-md p-10 rounded-[3rem] border border-white/10" data-aos="zoom-in">
+                <div class="text-center">
+                    <p class="text-4xl font-black text-blue-500">150+</p>
+                    <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Projects Delivered</p>
+                </div>
+                <div class="w-px h-12 bg-white/10 hidden md:block"></div>
+                <div class="text-center">
+                    <p class="text-4xl font-black text-blue-500">$50M+</p>
+                    <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Revenue Generated</p>
+                </div>
+                <div class="w-px h-12 bg-white/10 hidden md:block"></div>
+                <div class="text-center">
+                    <p class="text-4xl font-black text-blue-500">12</p>
+                    <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Countries Served</p>
+                </div>
+                <div class="w-px h-12 bg-white/10 hidden md:block"></div>
+                <div class="text-center">
+                    <p class="text-4xl font-black text-blue-500">95%</p>
+                    <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 container mx-auto px-8">
+        <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-blue-500 mb-12">The Showstoppers</h2>
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="portfolio-card p-10 rounded-[3rem] group overflow-hidden relative" data-aos="fade-right">
+                <div class="relative z-10">
+                    <span class="text-xs font-bold text-blue-400 bg-blue-400/10 px-4 py-1 rounded-full uppercase tracking-widest">Energy & CleanTech</span>
+                    <h3 class="text-5xl font-black mt-6 mb-4 italic">RENERGE</h3>
+                    <p class="text-gray-400 mb-8 max-w-md">Turned a manual operation into an AI-powered platform across 5 markets. $12M Series A raised.</p>
+                    <div class="flex gap-4 mb-8">
+                        <div class="text-center border-r border-white/10 pr-4">
+                            <p class="text-2xl font-bold">300%</p>
+                            <p class="text-[8px] uppercase opacity-50">Revenue Growth</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold">2023</p>
+                            <p class="text-[8px] uppercase opacity-50">Year Launched</p>
+                        </div>
+                    </div>
+                    <a href="case-study.html" class="text-sm font-bold border-b-2 border-blue-600 pb-1 hover:text-blue-400 transition">View Case Study →</a>
+                </div>
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-30 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95281773ad90?auto=format&fit=crop&q=80" class="object-cover h-full w-full">
+                </div>
+            </div>
+
+            <div class="portfolio-card p-10 rounded-[3rem] group overflow-hidden relative" data-aos="fade-left">
+                <div class="relative z-10">
+                    <span class="text-xs font-bold text-blue-400 bg-blue-400/10 px-4 py-1 rounded-full uppercase tracking-widest">Policy & Advocacy</span>
+                    <h3 class="text-5xl font-black mt-6 mb-4 italic">SPPG</h3>
+                    <p class="text-gray-400 mb-8 max-w-md">Mobilized 60,000 citizens through a multi-channel advocacy engine. 85% win rate.</p>
+                    <div class="flex gap-4 mb-8">
+                        <div class="text-center border-r border-white/10 pr-4">
+                            <p class="text-2xl font-bold">60K+</p>
+                            <p class="text-[8px] uppercase opacity-50">Mobilized</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold">85%</p>
+                            <p class="text-[8px] uppercase opacity-50">Success Rate</p>
+                        </div>
+                    </div>
+                    <a href="case-study.html" class="text-sm font-bold border-b-2 border-blue-600 pb-1 hover:text-blue-400 transition">View Case Study →</a>
+                </div>
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-30 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80" class="object-cover h-full w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/5 border-y border-white/5">
+        <div class="container mx-auto px-8">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-5xl font-bold mb-6 italic">One Partner. <span class="text-blue-500">Every Capability.</span></h2>
+                <p class="text-gray-400">Filter by discipline to see the breadth and depth of our capabilities across world-class branding, technology, and strategy.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-16">
+                <button onclick="filterProjects('all')" class="filter-btn active bg-blue-600 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">All Work</button>
+                <button onclick="filterProjects('brand')" class="filter-btn border border-white/10 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5">Brand Identity</button>
+                <button onclick="filterProjects('digital')" class="filter-btn border border-white/10 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5">Digital Products</button>
+                <button onclick="filterProjects('strategy')" class="filter-btn border border-white/10 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5">Strategy</button>
+                <button onclick="filterProjects('campaign')" class="filter-btn border border-white/10 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5">Campaigns</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
+                <div class="grid-item digital portfolio-card p-8 rounded-3xl" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 opacity-60">
+                    <h4 class="text-2xl font-bold mb-2 italic">MDS Logistics</h4>
+                    <p class="text-xs text-blue-400 uppercase tracking-widest mb-4">AI Integration • Product Design</p>
+                    <p class="text-sm text-gray-500 mb-6">75% reduction in delivery times via AI routing.</p>
+                    <a href="#" class="text-[10px] font-black uppercase tracking-widest text-blue-500 hover:text-white transition">View Project →</a>
+                </div>
+
+                <div class="grid-item brand portfolio-card p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 opacity-60">
+                    <h4 class="text-2xl font-bold mb-2 italic">Elysium</h4>
+                    <p class="text-xs text-blue-400 uppercase tracking-widest mb-4">Rebranding • Visual Identity</p>
+                    <p class="text-sm text-gray-500 mb-6">250% increase in youth customers for a legacy brand.</p>
+                    <a href="#" class="text-[10px] font-black uppercase tracking-widest text-blue-500 hover:text-white transition">View Project →</a>
+                </div>
+
+                <div class="grid-item digital portfolio-card p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 opacity-60">
+                    <h4 class="text-2xl font-bold mb-2 italic">Sterling Bank</h4>
+                    <p class="text-xs text-blue-400 uppercase tracking-widest mb-4">Mobile App • User Experience</p>
+                    <p class="text-sm text-gray-500 mb-6">Redesigned experience for 2M active users.</p>
+                    <a href="#" class="text-[10px] font-black uppercase tracking-widest text-blue-500 hover:text-white transition">View Project →</a>
+                </div>
+                
+                </div>
+        </div>
+    </section>
+
+    <section class="py-24 container mx-auto px-8">
+        <h2 class="text-5xl font-black mb-16 text-center italic">We Speak Every <br> <span class="text-gradient">Industry Language.</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-8 border border-white/5 rounded-2xl hover:bg-blue-600 transition group">
+                <h5 class="font-bold mb-2 uppercase text-xs tracking-widest opacity-50 group-hover:opacity-100">Energy & CleanTech</h5>
+                <p class="text-sm">Renerge, Transcorp Energy, Shell Nigeria</p>
+            </div>
+            <div class="p-8 border border-white/5 rounded-2xl hover:bg-blue-600 transition group">
+                <h5 class="font-bold mb-2 uppercase text-xs tracking-widest opacity-50 group-hover:opacity-100">Financial Services</h5>
+                <p class="text-sm">Sterling Bank, Access Bank, Providus</p>
+            </div>
+            <div class="p-8 border border-white/5 rounded-2xl hover:bg-blue-600 transition group">
+                <h5 class="font-bold mb-2 uppercase text-xs tracking-widest opacity-50 group-hover:opacity-100">Tech & Startups</h5>
+                <p class="text-sm">MDS, DO, Paystack, Flutterwave</p>
+            </div>
+            <div class="p-8 border border-white/5 rounded-2xl hover:bg-blue-600 transition group">
+                <h5 class="font-bold mb-2 uppercase text-xs tracking-widest opacity-50 group-hover:opacity-100">Intl Development</h5>
+                <p class="text-sm">World Bank, AfDB, UN Women</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white text-black">
+        <div class="container mx-auto px-8">
+            <h2 class="text-center text-4xl font-bold mb-16 italic">What Our Clients Say</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-10 bg-gray-50 rounded-[3rem]" data-aos="fade-up">
+                    <p class="text-xl italic mb-8">"Endgame didn't just deliver—they became part of our team and drove results we couldn't achieve alone. 300% growth doesn't lie."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">Adeola Johnson</p>
+                            <p class="text-xs uppercase opacity-50">CEO & Co-Founder, Renerge</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-10 bg-gray-50 rounded-[3rem]" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-xl italic mb-8">"In 50 years, no agency understood our brand like Endgame did. Sales are up 250% with younger consumers."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">James Williams</p>
+                            <p class="text-xs uppercase opacity-50">CMO, Elysium</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-blue-600 text-white text-center">
+        <div class="container mx-auto px-8" data-aos="zoom-in">
+            <h2 class="text-6xl md:text-8xl font-black mb-8 italic">Let’s Build Your <br> Success Story.</h2>
+            <p class="text-xl mb-12 opacity-80">Ready to achieve results like these? Let's talk execution.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="contact.html" class="bg-white text-blue-600 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition shadow-2xl">
+                    Book Private Consultation
+                </a>
+                <a href="#" class="border border-white/30 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition">
+                    Get Capabilities Deck (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+  <footer class="relative bg-black text-white pt-24 pb-12 border-t border-white/5 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-30">
+        <img src="footer-bg.png" class="w-full h-full object-cover" alt="Footer Background">
+    </div>
+       <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-20 mb-24">
+            <div>
+                <h3 class="text-4xl font-black italic mb-8">endgame</h3>
+                <p class="text-2xl font-light text-gray-400 max-w-sm leading-relaxed">
+                    Your <span class="text-white font-bold not-italic">Execution Partner</span> for Strategy, Creative, Marketing, and Technology.
+
+                </p>
+                <div class="mt-12">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition">
+                        Book a Private Consultation
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-12">
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Services</h5>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="hover:text-white transition cursor-pointer">Strategy Execution & Systems Design</li>
+                        <li class="hover:text-white transition cursor-pointer">Technology & AI Transformation</li>
+                        <li class="hover:text-white transition cursor-pointer">Creative & Marketing Execution</li>
+                        <li class="hover:text-white transition cursor-pointer">Acceleration Engines</li>
+                    </ul>
+                </div>
+                <div>
+    <h5 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Navigation</h5>
+    <ul class="space-y-4 text-sm text-gray-400">
+
+          <li>
+            <a href="/" class="hover:text-white transition">Home</a>
+        </li>
+        <li>
+            <a href="services.html" class="hover:text-white transition">Our Services</a>
+        </li>
+          <li>
+            <a href="case-study.html" class="hover:text-white transition">Case Studies</a>
+        </li>
+          <li>
+            <a href="portfolio.html" class="hover:text-white transition">Portfolio Companies</a>
+        </li>
+        <li>
+            <a href="why-us.html" class="hover:text-white transition">Why Us</a>
+        </li>
+      
+        <li>
+            <a href="about.html" class="hover:text-white transition">About Us</a>
+        </li>
+    </ul>
+</div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40">
+            <p class="text-[10px] tracking-widest uppercase font-bold">&copy; 2026 ENDGAME. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-8 text-[10px] tracking-widest uppercase font-bold">
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+                <a href="https://x.com/endgamehq" class="hover:text-white transition">X / Twitter</a>
+                <a href="https://www.instagram.com/endgamehq/" class="hover:text-white transition">Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Portfolio Filtering Logic
+        function filterProjects(category) {
+            const items = document.querySelectorAll('.grid-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update Buttons
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'active');
+                btn.classList.add('border', 'border-white/10');
+            });
+            event.currentTarget.classList.add('bg-blue-600', 'active');
+            event.currentTarget.classList.remove('border', 'border-white/10');
+
+            // Filter Grid
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
