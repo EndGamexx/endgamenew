@@ -50,21 +50,64 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md">
-        <div class="text-2xl font-bold tracking-tighter">endgame</div>
-        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70">
-            <a href="services.html" class="hover:opacity-100 transition">Services</a>
-            <a href="case-study.html" class="hover:opacity-100 transition">Case Studies</a>
-            <a href="portfolio.html" class="hover:opacity-100 transition">Portfolio Companies</a>
-            <a href="/about.html" class="hover:opacity-100 transition">Who We Are</a>
-            <a href="/why-us.html" class="hover:opacity-100 transition">Why Us</a>
-        </div>
-        <a href="contact.html">
-    <button class="bg-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition">
-        Book Consultation
-    </button>
-</a>
-    </nav>
+  <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/10">
+    <div class="text-2xl font-bold tracking-tighter italic">
+        <a href="index.html">endgame</a>
+    </div>
+
+    <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70">
+        <a href="services.html" class="hover:opacity-100 transition">Services</a>
+        <a href="case-study.html" class="hover:opacity-100 transition">Case Studies</a>
+        <a href="portfolio.html" class="hover:opacity-100 transition">Portfolio Companies</a>
+        <a href="about.html" class="hover:opacity-100 transition">Who We Are</a>
+        <a href="why-us.html" class="hover:opacity-100 transition">Why Us</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <a href="contact.html" class="hidden md:block">
+            <button class="bg-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition">
+                Book Consultation
+            </button>
+        </a>
+
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white focus:outline-none">
+            <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobileMenu" class="fixed inset-0 bg-black/95 backdrop-blur-2xl z-40 hidden flex-col items-center justify-center gap-8 text-xl font-bold uppercase tracking-widest transition-all">
+        <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="services.html" onclick="toggleMobileMenu()" class="hover:text-blue-500">Services</a>
+        <a href="case-study.html" onclick="toggleMobileMenu()" class="hover:text-blue-500">Case Studies</a>
+        <a href="portfolio.html" onclick="toggleMobileMenu()" class="hover:text-blue-500">Portfolio</a>
+        <a href="about.html" onclick="toggleMobileMenu()" class="hover:text-blue-500">Who We Are</a>
+        <a href="why-us.html" onclick="toggleMobileMenu()" class="hover:text-blue-500">Why Us</a>
+        <a href="contact.html" onclick="toggleMobileMenu()" class="bg-blue-600 px-8 py-3 rounded-full mt-4">Book Now</a>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const body = document.body;
+        
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            menu.classList.add('flex');
+            body.style.overflow = 'hidden'; // Prevent scrolling while menu is open
+        } else {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    }
+</script>
 
 <section class="relative min-h-screen flex items-center pt-32 pb-12 overflow-hidden bg-[#1e40af]">
     <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
