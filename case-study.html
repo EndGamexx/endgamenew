@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Project Genesis Scale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Audio Waveform Animation */
+        .wave {
+            height: 20px;
+            width: 3px;
+            background: #3b82f6;
+            margin: 0 1px;
+            border-radius: 10px;
+            display: inline-block;
+            animation: wave-animation 1s infinite ease-in-out;
+        }
+        .wave:nth-child(2) { animation-delay: 0.1s; }
+        .wave:nth-child(3) { animation-delay: 0.2s; }
+        .wave:nth-child(4) { animation-delay: 0.3s; }
+        @keyframes wave-animation {
+            0%, 100% { height: 5px; }
+            50% { height: 25px; }
+        }
+
+        /* Toggle Switch Styling */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px; width: 26px;
+            left: 4px; bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #3b82f6; }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        /* Perspective Image Comparison */
+        .perspective-container { position: relative; width: 100%; height: 500px; overflow: hidden; border-radius: 2rem; }
+        .reality-layer { position: absolute; inset: 0; transition: opacity 0.5s ease; }
+        .endgame-layer { position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s ease; }
+        .show-endgame .reality-layer { opacity: 0; }
+        .show-endgame .endgame-layer { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/5">
+        <div class="text-2xl font-bold tracking-tighter italic"><a href="index.html">endgame</a></div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-bold opacity-70">
+            <a href="index.html" class="hover:text-blue-500">Home</a>
+            <a href="services.html" class="hover:text-blue-500">Services</a>
+            <a href="contact.html" class="hover:text-blue-500">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-[10px] uppercase font-bold tracking-widest opacity-50">Project Status: Complete</span>
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 container mx-auto px-8 relative">
+        <div class="absolute top-20 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+        <div class="max-w-5xl" data-aos="fade-up">
+            <div class="flex gap-4 mb-8">
+                <span class="px-4 py-1 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/5">FinTech Scale-up</span>
+                <span class="px-4 py-1 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/5">Global Launch</span>
+            </div>
+            <h1 class="text-7xl md:text-9xl font-black mb-8 leading-[0.85]">
+                Project <br> <span class="italic text-gradient text-blue-400">Genesis.</span>
+            </h1>
+            
+            <div class="flex items-center gap-6 bg-white/5 p-4 pr-8 rounded-full border border-white/10 w-fit">
+                <button class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition shadow-xl">
+                    <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest opacity-40">Audio Briefing (2:14)</p>
+                    <div class="flex items-center">
+                        <span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span>
+                        <span class="text-xs ml-4 font-mono text-blue-400 italic">"The strategy that unlocked 400% growth..."</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/5 border-y border-white/5">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-light mb-16 italic">The <span class="font-bold text-white">Stagnation</span> Mirror</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition group">
+                    <h3 class="text-xl font-bold mb-4 group-hover:text-blue-400">The "Slow Tech" Trap</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">You have the vision, but your dev team is moving at 10% speed. Your competitors are shipping features while you are still debugging the legacy core.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition group">
+                    <h3 class="text-xl font-bold mb-4 group-hover:text-blue-400">The Creative Gap</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Your product is world-class, but your marketing looks like a template from 2018. You are losing the attention battle because of poor aesthetic execution.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition group">
+                    <h3 class="text-xl font-bold mb-4 group-hover:text-blue-400">Scaling Friction</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Operations are manual. Every new customer adds more stress to the team instead of more revenue to the bottom line.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 container mx-auto px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div class="max-w-2xl">
+                <h2 class="text-5xl font-bold mb-6 italic">The Reality Shift</h2>
+                <p class="text-gray-400 text-lg">Use the toggle to see the difference between the client's internal reality before Endgame, and the high-performance system we deployed.</p>
+            </div>
+            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                <span class="text-xs uppercase font-bold tracking-widest opacity-50">Operational Reality</span>
+                <label class="switch">
+                    <input type="checkbox" id="realityToggle" onchange="toggleReality()">
+                    <span class="slider"></span>
+                </label>
+                <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Endgame Precision</span>
+            </div>
+        </div>
+
+        <div class="perspective-container shadow-2xl" id="imageContainer">
+            <div class="reality-layer bg-gray-900 flex items-center justify-center p-20">
+                <div class="text-center max-w-lg">
+                    <h4 class="text-3xl font-bold mb-4 opacity-40">Internal Chaos</h4>
+                    <p class="text-gray-600 italic">"Manual tracking, fragmented creative, slow deployment, and 12-week release cycles."</p>
+                    <div class="mt-8 grid grid-cols-2 gap-4 opacity-20">
+                        <div class="h-24 bg-gray-800 rounded-xl"></div>
+                        <div class="h-24 bg-gray-800 rounded-xl"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="endgame-layer bg-blue-600 flex items-center justify-center p-20">
+                <div class="text-center max-w-lg">
+                    <h4 class="text-3xl font-bold mb-4">Unified Execution</h4>
+                    <p class="text-blue-100">"Automated AI-powered workflows, global brand identity, and 48-hour sprint cycles."</p>
+                    <div class="mt-8 grid grid-cols-3 gap-4">
+                        <div class="h-32 bg-white/20 rounded-xl backdrop-blur-md"></div>
+                        <div class="h-32 bg-white/20 rounded-xl backdrop-blur-md"></div>
+                        <div class="h-32 bg-white/20 rounded-xl backdrop-blur-md"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-blue-600 text-white">
+        <div class="container mx-auto px-8 grid md:grid-cols-3 gap-16 text-center">
+            <div data-aos="zoom-in">
+                <p class="text-8xl font-black mb-2">4.2x</p>
+                <p class="text-xs uppercase tracking-[0.4em] font-bold opacity-70">Revenue Growth</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <p class="text-8xl font-black mb-2">14d</p>
+                <p class="text-xs uppercase tracking-[0.4em] font-bold opacity-70">Global Deployment</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <p class="text-8xl font-black mb-2">0%</p>
+                <p class="text-xs uppercase tracking-[0.4em] font-bold opacity-70">Friction Policy</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold mb-16 text-center italic">The Deliverables</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="h-80 bg-white/5 rounded-3xl border border-white/10 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" class="object-cover w-full h-full opacity-50 group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-6 left-6"><p class="text-xs font-bold uppercase tracking-widest">Brand System</p></div>
+                </div>
+                <div class="h-80 bg-white/5 rounded-3xl border border-white/10 overflow-hidden relative group mt-8">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" class="object-cover w-full h-full opacity-50 group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-6 left-6"><p class="text-xs font-bold uppercase tracking-widest">Dashboard Tech</p></div>
+                </div>
+                <div class="h-80 bg-white/5 rounded-3xl border border-white/10 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" class="object-cover w-full h-full opacity-50 group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-6 left-6"><p class="text-xs font-bold uppercase tracking-widest">Growth Engine</p></div>
+                </div>
+                <div class="h-80 bg-white/5 rounded-3xl border border-white/10 overflow-hidden relative group mt-8">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80" class="object-cover w-full h-full opacity-50 group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-6 left-6"><p class="text-xs font-bold uppercase tracking-widest">AI Automations</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 text-center">
+        <div class="max-w-3xl mx-auto px-8" data-aos="zoom-in">
+            <h2 class="text-5xl md:text-6xl font-black mb-8 italic italic">Next Project? <br> Yours.</h2>
+            <p class="text-gray-500 mb-12">Stop reading about success. Let us build your next breakthrough.</p>
+            <a href="contact.html" class="inline-block bg-blue-600 text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:invert transition shadow-2xl">
+                Start Execution Phase
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="text-2xl font-bold italic mb-4">endgame</div>
+        <p class="text-[10px] tracking-[0.4em] opacity-30 font-bold uppercase">&copy; 2026 ENDGAME HQ. BUILT FOR BREAKTHROUGHS.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function toggleReality() {
+            const container = document.getElementById('imageContainer');
+            container.classList.toggle('show-endgame');
+        }
+    </script>
+</body>
+</html>
