@@ -104,18 +104,22 @@
                 Project <br> <span class="italic text-gradient text-blue-400">Genesis.</span>
             </h1>
             
-            <div class="flex items-center gap-6 bg-white/5 p-4 pr-8 rounded-full border border-white/10 w-fit">
-                <button class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition shadow-xl">
-                    <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </button>
-                <div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest opacity-40">Audio Briefing (2:14)</p>
-                    <div class="flex items-center">
-                        <span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span>
-                        <span class="text-xs ml-4 font-mono text-blue-400 italic">"The strategy that unlocked 400% growth..."</span>
-                    </div>
+            <audio id="briefingAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+        <div class="flex items-center gap-6 bg-white/5 p-4 pr-8 rounded-full border border-white/10 w-fit">
+            <button onclick="toggleAudio()" id="playBtn" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition shadow-xl">
+                <svg id="playIcon" class="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </button>
+            <div>
+                <p class="text-[10px] font-bold uppercase tracking-widest opacity-40">Audio Briefing (2:14)</p>
+                <div class="flex items-center">
+                    <span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span>
+                    <span class="text-xs ml-4 font-mono text-blue-400 italic">"The strategy that unlocked 400% growth..."</span>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -156,28 +160,44 @@
         </div>
 
         <div class="perspective-container shadow-2xl" id="imageContainer">
-            <div class="reality-layer bg-gray-900 flex items-center justify-center p-20">
-                <div class="text-center max-w-lg">
-                    <h4 class="text-3xl font-bold mb-4 opacity-40">Internal Chaos</h4>
-                    <p class="text-gray-600 italic">"Manual tracking, fragmented creative, slow deployment, and 12-week release cycles."</p>
-                    <div class="mt-8 grid grid-cols-2 gap-4 opacity-20">
-                        <div class="h-24 bg-gray-800 rounded-xl"></div>
-                        <div class="h-24 bg-gray-800 rounded-xl"></div>
-                    </div>
+    <div class="reality-layer bg-gray-900 flex items-center justify-center p-10 md:p-20">
+        <div class="text-center w-full max-w-4xl">
+            <h4 class="text-3xl font-bold mb-4 opacity-40 uppercase tracking-widest">Internal Chaos</h4>
+            <p class="text-gray-600 italic mb-8">"Manual tracking, fragmented creative, and 12-week release cycles."</p>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 opacity-20 grayscale">
+                <div class="h-48 bg-gray-800 rounded-xl border border-dashed border-gray-600 flex items-center justify-center overflow-hidden">
+                    <img src="https://placehold.co/400x600/222/666?text=Before+1" class="w-full h-full object-cover" alt="Reality 1">
                 </div>
-            </div>
-            <div class="endgame-layer bg-blue-600 flex items-center justify-center p-20">
-                <div class="text-center max-w-lg">
-                    <h4 class="text-3xl font-bold mb-4">Unified Execution</h4>
-                    <p class="text-blue-100">"Automated AI-powered workflows, global brand identity, and 48-hour sprint cycles."</p>
-                    <div class="mt-8 grid grid-cols-3 gap-4">
-                        <div class="h-32 bg-white/20 rounded-xl backdrop-blur-md"></div>
-                        <div class="h-32 bg-white/20 rounded-xl backdrop-blur-md"></div>
-                        <div class="h-32 bg-white/20 rounded-xl backdrop-blur-md"></div>
-                    </div>
+                <div class="h-48 bg-gray-800 rounded-xl border border-dashed border-gray-600 flex items-center justify-center overflow-hidden">
+                    <img src="https://placehold.co/400x600/222/666?text=Before+2" class="w-full h-full object-cover" alt="Reality 2">
+                </div>
+                <div class="h-48 bg-gray-800 rounded-xl border border-dashed border-gray-600 flex items-center justify-center overflow-hidden">
+                    <img src="https://placehold.co/400x600/222/666?text=Before+3" class="w-full h-full object-cover" alt="Reality 3">
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="endgame-layer bg-blue-900 flex items-center justify-center p-10 md:p-20">
+        <div class="text-center w-full max-w-4xl">
+            <h4 class="text-3xl font-bold mb-4 uppercase tracking-widest">Unified Execution</h4>
+            <p class="text-blue-100 mb-8">"Automated AI-powered workflows, global brand identity, and 48-hour sprint cycles."</p>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="h-48 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden group">
+                    <img src="https://placehold.co/400x600/1e40af/fff?text=Endgame+Result+1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Result 1">
+                </div>
+                <div class="h-48 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden group">
+                    <img src="https://placehold.co/400x600/1e40af/fff?text=Endgame+Result+2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Result 2">
+                </div>
+                <div class="h-48 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden group">
+                    <img src="https://placehold.co/400x600/1e40af/fff?text=Endgame+Result+3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Result 3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     </section>
 
     <section class="py-24 bg-blue-600 text-white">
@@ -238,12 +258,30 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+    // 1. Initialize Animations
+    AOS.init({ duration: 1000, once: true });
 
-        function toggleReality() {
-            const container = document.getElementById('imageContainer');
-            container.classList.toggle('show-endgame');
+    // 2. Reality/Endgame Toggle Logic
+    function toggleReality() {
+        const container = document.getElementById('imageContainer');
+        container.classList.toggle('show-endgame');
+    }
+
+    // 3. Audio Player Logic
+    function toggleAudio() {
+        const audio = document.getElementById('briefingAudio');
+        const icon = document.getElementById('playIcon');
+        
+        if (audio.paused) {
+            audio.play();
+            // Change the SVG icon to "Pause" (two vertical bars)
+            icon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+        } else {
+            audio.pause();
+            // Change the SVG icon back to "Play" (triangle)
+            icon.innerHTML = '<path d="M8 5v14l11-7z"/>';
         }
-    </script>
+    }
+</script>
 </body>
 </html>
