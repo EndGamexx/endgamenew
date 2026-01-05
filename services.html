@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | The Endgame Execution Ecosystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .service-card:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.05);
+            transform: translateY(-10px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Smooth marquee for client categories */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll { animation: scroll 30s linear infinite; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+        <div class="text-2xl font-bold tracking-tighter italic text-white"><a href="index.html">endgame</a></div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70 font-bold">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="about.html" class="hover:text-blue-400 transition">About</a>
+            <a href="why-us.html" class="hover:text-blue-400 transition">Why Us</a>
+            <a href="services.html" class="text-blue-500 font-bold underline underline-offset-8">Services</a>
+        </div>
+        <a href="contact.html" class="bg-blue-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-500 transition">Contact Us</a>
+    </nav>
+
+    <section class="relative pt-48 pb-32 overflow-hidden">
+        <div class="container mx-auto px-8 text-center">
+            <h4 class="text-blue-500 font-bold mb-6 tracking-[0.5em] uppercase text-xs" data-aos="fade-down">The Architecture of Ambition</h4>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none" data-aos="fade-up">
+                Turn Vision into <br> <span class="text-gradient">Sovereign Execution.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                We don't just provide services. We deploy a high-velocity execution engine that bridges the gap between where you are and where you are destined to be.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 container mx-auto px-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="service-card p-12 rounded-[2.5rem]" data-aos="fade-up">
+                <div class="mb-8 text-blue-500">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3 class="text-3xl font-bold mb-6 italic">Strategy Execution & Systems Design</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed">Most strategies fail because of execution friction. We design resilient systems that ensure your vision is operationalized at every level of your organization.</p>
+                <ul class="space-y-3 text-sm font-semibold text-gray-300">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Market Entry Strategy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Operational Architecture</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Acceleration Engines</li>
+                </ul>
+            </div>
+
+            <div class="service-card p-12 rounded-[2.5rem]" data-aos="fade-up" data-aos-delay="100">
+                <div class="mb-8 text-blue-500">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </div>
+                <h3 class="text-3xl font-bold mb-6 italic">Creative & Performance Marketing</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed">Creativity without impact is just art. We build high-conversion brand identities and marketing machines that dominate attention and drive revenue.</p>
+                <ul class="space-y-3 text-sm font-semibold text-gray-300">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> World-Class Branding</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Content Ecosystems</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Performance Advertising</li>
+                </ul>
+            </div>
+
+            <div class="service-card p-12 rounded-[2.5rem]" data-aos="fade-up" data-aos-delay="200">
+                <div class="mb-8 text-blue-500">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-3xl font-bold mb-6 italic">Technology & AI Transformation</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed">The future is automated. We integrate custom AI solutions and modern software architecture to multiply your team's output by 10x.</p>
+                <ul class="space-y-3 text-sm font-semibold text-gray-300">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Custom AI Integration</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Full-Stack Development</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Workflow Automation</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-white text-black">
+        <div class="container mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-16 text-center italic">The Endgame Method</h2>
+            <div class="grid md:grid-cols-4 gap-12 text-center">
+                <div data-aos="zoom-in">
+                    <h4 class="text-6xl font-black text-blue-100 mb-4">01</h4>
+                    <h5 class="font-bold text-xl mb-2 uppercase">Clarity</h5>
+                    <p class="text-sm text-gray-500">Deep strategy audit to identify growth bottlenecks.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <h4 class="text-6xl font-black text-blue-100 mb-4">02</h4>
+                    <h5 class="font-bold text-xl mb-2 uppercase">Design</h5>
+                    <p class="text-sm text-gray-500">Developing the creative and technical blueprint.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <h4 class="text-6xl font-black text-blue-100 mb-4">03</h4>
+                    <h5 class="font-bold text-xl mb-2 uppercase">Deploy</h5>
+                    <p class="text-sm text-gray-500">Rapid implementation using high-velocity workflows.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <h4 class="text-6xl font-black text-blue-100 mb-4">04</h4>
+                    <h5 class="font-bold text-xl mb-2 uppercase">Scale</h5>
+                    <p class="text-sm text-gray-500">Continuous optimization for global-standard results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 container mx-auto px-8">
+        <h2 class="text-4xl font-light text-center mb-16">What <span class="font-bold italic">Leadership</span> Says</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-12 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-right">
+                <p class="text-2xl font-light italic mb-8">"Endgame didn't just give us a deck. They stayed until the engine was running. Our speed to market increased by 40% in the first quarter."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gray-700 rounded-full"></div>
+                    <div>
+                        <p class="font-bold">Director of Innovation</p>
+                        <p class="text-xs text-blue-400 uppercase tracking-widest">Global FinTech Firm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-12 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-left">
+                <p class="text-2xl font-light italic mb-8">"The intersection of AI and Strategy is where Endgame wins. They transformed our legacy operations into an intelligent, self-scaling machine."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gray-700 rounded-full"></div>
+                    <div>
+                        <p class="font-bold">Chief Executive Officer</p>
+                        <p class="text-xs text-blue-400 uppercase tracking-widest">VC-Backed Scaleup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-blue-600 text-white text-center">
+        <div class="max-w-4xl mx-auto px-8" data-aos="zoom-in">
+            <h2 class="text-5xl md:text-7xl font-black mb-10 leading-tight italic">Stop Managing Vendors. <br> Start Executing.</h2>
+            <p class="text-xl mb-12 opacity-80">Join the elite organizations using Endgame as their primary execution partner.</p>
+            <a href="contact.html" class="inline-block bg-white text-blue-600 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition shadow-2xl">
+                Request an Implementation Call
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="text-2xl font-bold italic mb-6">endgame</div>
+        <p class="text-[10px] tracking-[0.5em] font-bold opacity-30 uppercase">&copy; 2026 ENDGAME PARTNERS. WORLDWIDE DELIVERY.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
