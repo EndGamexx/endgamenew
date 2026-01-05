@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Endgame Execution Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #fcfcf9; 
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        .bg-endgame-blue { background-color: #1e40af; }
+        .text-endgame-blue { color: #1e40af; }
+
+        /* Floating Animation for Icons */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+
+        /* Glass effect for Belief cards */
+        .belief-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 64, 175, 0.1);
+            transition: all 0.3s ease;
+        }
+        .belief-card:hover {
+            border-color: #1e40af;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="text-2xl font-bold tracking-tighter italic text-endgame-blue"><a href="index.html">endgame</a></div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70 font-bold">
+            <a href="index.html" class="hover:text-endgame-blue transition">Home</a>
+            <a href="#vision" class="hover:text-endgame-blue transition">Vision</a>
+            <a href="#approach" class="hover:text-endgame-blue transition">Approach</a>
+        </div>
+        <button class="bg-endgame-blue text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition text-sm">Contact Us</button>
+    </nav>
+
+    <section class="relative min-h-[80vh] flex items-center pt-32 bg-endgame-blue overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-8 relative z-10">
+            <div class="max-w-4xl" data-aos="fade-up">
+                <h4 class="text-blue-200 font-bold mb-4 tracking-[0.4em] uppercase text-xs">The Engine of Progress</h4>
+                <h1 class="text-6xl md:text-8xl font-bold text-white leading-tight mb-8">
+                    We Build the <span class="italic text-blue-300">Teams & Systems</span> That Build the Future.
+                </h1>
+                <p class="text-xl text-blue-100/80 max-w-2xl leading-relaxed">
+                    Endgame is a global Strategy, Creative, and Technology Execution Partner. We don't just advise; we integrate into your mission to deliver world-class results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision" class="py-24 container mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-4xl font-bold mb-6 text-endgame-blue">Who We Are</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                Endgame is the high-performance execution engine for organizations shaping the future. We bridge the gap between ambitious vision and measurable results.
+            </p>
+            <div class="p-8 bg-blue-50 rounded-2xl border-l-4 border-endgame-blue">
+                <h3 class="font-bold text-xl mb-2 italic">Our Mission</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    To empower forward-thinking organisations with the clarity, capability, and execution strength required to achieve meaningful, global impact.
+                </p>
+            </div>
+        </div>
+        <div class="relative" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" class="rounded-3xl shadow-2xl" alt="Collaboration">
+            <div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-2xl shadow-xl hidden md:block animate-float">
+                <span class="text-4xl font-bold text-endgame-blue">100%</span>
+                <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">Execution Commitment</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-8">
+            <h4 class="text-center text-xs tracking-[0.4em] uppercase text-gray-400 mb-4 font-bold">Core Values</h4>
+            <h2 class="text-center text-4xl font-light mb-16 text-endgame-blue">What We <span class="font-bold">Believe</span></h2>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="belief-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl mb-4">🎯</div>
+                    <h3 class="font-bold mb-2">Strategy Leads</h3>
+                    <p class="text-sm text-gray-500">Direction before action. Clarity is our starting line.</p>
+                </div>
+                <div class="belief-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="font-bold mb-2">Creative Inspires</h3>
+                    <p class="text-sm text-gray-400">Ideas only matter when they move people.</p>
+                </div>
+                <div class="belief-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h3 class="font-bold mb-2">Tech Accelerates</h3>
+                    <p class="text-sm text-gray-400">AI and modern systems amplify human potential.</p>
+                </div>
+                <div class="belief-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="font-bold mb-2">World-Class</h3>
+                    <p class="text-sm text-gray-400">High speed. High quality. Zero compromise.</p>
+                </div>
+                <div class="belief-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-3xl mb-4">🌍</div>
+                    <h3 class="font-bold mb-2">Intentional Impact</h3>
+                    <p class="text-sm text-gray-400">Outcomes must be aligned with purpose.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="py-24 bg-white">
+        <div class="container mx-auto px-8 flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2" data-aos="fade-right">
+                <h2 class="text-5xl font-bold text-endgame-blue mb-8">An Integrated <br> Approach.</h2>
+                <ul class="space-y-6">
+                    <li class="flex items-center gap-4 text-xl">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-endgame-blue flex items-center justify-center font-bold text-sm">01</span>
+                        Strategic Insight
+                    </li>
+                    <li class="flex items-center gap-4 text-xl">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-endgame-blue flex items-center justify-center font-bold text-sm">02</span>
+                        Creative Innovation
+                    </li>
+                    <li class="flex items-center gap-4 text-xl">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-endgame-blue flex items-center justify-center font-bold text-sm">03</span>
+                        Technology & AI Transformation
+                    </li>
+                    <li class="flex items-center gap-4 text-xl">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-endgame-blue flex items-center justify-center font-bold text-sm">04</span>
+                        High-Velocity Execution
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:w-1/2 bg-endgame-blue p-12 rounded-[3rem] text-white" data-aos="flip-left">
+                <h3 class="text-3xl italic mb-6">More than a service provider.</h3>
+                <p class="text-blue-100 text-lg leading-relaxed mb-8">
+                    We become a seamless extension of your team—your intelligent, AI-powered execution engine. We remove internal bottlenecks and achieve results once deemed out of reach.
+                </p>
+                <button class="bg-white text-endgame-blue px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:invert transition">
+                    Explore Our Model
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-900 text-white text-center">
+        <div class="max-w-3xl mx-auto px-8" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 italic">To help build the future, one ambitious project at a time.</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-12 mt-16 opacity-60 text-xs tracking-widest font-bold uppercase">
+                <span>Integrity</span>
+                <span>Precision</span>
+                <span>Elevation</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-12 border-t border-white/5">
+        <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-bold italic">endgame</div>
+            <p class="text-xs opacity-40 uppercase tracking-[0.3em]">&copy; 2026 ENDGAME. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-6">
+                <a href="#" class="opacity-50 hover:opacity-100 transition">LinkedIn</a>
+                <a href="#" class="opacity-50 hover:opacity-100 transition">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
