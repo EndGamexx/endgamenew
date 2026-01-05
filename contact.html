@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Endgame Breakthroughs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #3b82f6;
+            outline: none;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0px rgba(59, 130, 246, 0);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md">
+        <div class="text-2xl font-bold tracking-tighter italic text-white"><a href="index.html">endgame</a></div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest opacity-70 font-bold">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="about.html" class="hover:text-blue-400 transition">About</a>
+            <a href="why-us.html" class="hover:text-blue-400 transition">Why Us</a>
+        </div>
+        <a href="mailto:hello@endgamehq.com" class="text-sm font-bold border-b border-blue-500 pb-1">hello@endgamehq.com</a>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 container mx-auto px-8">
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
+            
+            <div data-aos="fade-right">
+                <h4 class="text-blue-500 font-bold mb-6 tracking-[0.4em] uppercase text-xs">READY TO EXECUTE</h4>
+                <h1 class="text-6xl md:text-7xl font-bold leading-[1.1] mb-8">
+                    Let’s Build Your <br>
+                    <span class="italic text-blue-400">Next Breakthrough.</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-12 leading-relaxed max-w-md">
+                    Tell us what you want to achieve — we’ll assemble the elite expertise required to deliver it at a global standard.
+                </p>
+
+                <div class="space-y-8">
+                    <div class="flex items-center gap-6 group">
+                        <div class="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest opacity-50 mb-1">Direct Email</p>
+                            <p class="text-xl font-semibold">hello@endgamehq.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-6 group">
+                        <div class="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest opacity-50 mb-1">Global Delivery</p>
+                            <p class="text-sm font-medium text-gray-300">UK • EU • Africa • USA • Canada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 relative" data-aos="fade-left">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest font-bold opacity-50 ml-2">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="input-field w-full px-6 py-4 rounded-2xl text-white">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest font-bold opacity-50 ml-2">Company</label>
+                            <input type="text" placeholder="Acme Corp" class="input-field w-full px-6 py-4 rounded-2xl text-white">
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-50 ml-2">Work Email</label>
+                        <input type="email" placeholder="john@company.com" class="input-field w-full px-6 py-4 rounded-2xl text-white">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-50 ml-2">What are you looking to execute?</label>
+                        <textarea rows="4" placeholder="Briefly describe your vision or breakthrough..." class="input-field w-full px-6 py-4 rounded-2xl text-white resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="glow-button w-full bg-blue-600 py-5 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-blue-500 transition">
+                        Submit Inquiry
+                    </button>
+                    
+                    <p class="text-center text-[10px] opacity-40 uppercase tracking-widest pt-4">
+                        Average response time: 4 hours
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <section class="py-12 border-t border-white/5 bg-white/5">
+        <div class="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-xs uppercase tracking-[0.5em] font-bold opacity-50">Global Network • Worldwide Delivery</p>
+            <div class="flex gap-12 grayscale opacity-40 text-sm font-black italic">
+                <span>LONDON</span>
+                <span>LAGOS</span>
+                <span>NEW YORK</span>
+                <span>PARIS</span>
+                <span>TORONTO</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="text-[10px] tracking-[0.4em] opacity-30 font-bold uppercase">&copy; 2026 ENDGAME HQ. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
