@@ -4,48 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EndGame | Your Execution Partner</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #050505; color: white; }
         .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-gradient { background: radial-gradient(circle at top right, #1e3a8a, transparent); }
   
-    /* Infinite Marquee Animation Logic for logos */
-/* Infinite Marquee Animation Logic */
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-}
+        /* Infinite Marquee */
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        .animate-marquee { animation: marquee 25s linear infinite; }
+        .group-hover\:pause:hover { animation-play-state: paused; }
+        @media (max-width: 768px) { .animate-marquee { animation-duration: 15s; } }
 
-.animate-marquee {
-    animation: marquee 25s linear infinite;
-}
+        /* Video Mimic */
+        @keyframes video-flash { 0%, 30% { opacity: 1; transform: scale(1); } 33%, 100% { opacity: 0; transform: scale(1.1); } }
+        .animate-video-flash { animation: video-flash 6s infinite; opacity: 0; }
 
-/* Pause animation on hover */
-.group-hover\:pause:hover {
-    animation-play-state: paused;
-}
-
-/* Ensure smooth movement on mobile */
-@media (max-width: 768px) {
-    .animate-marquee {
-        animation-duration: 15s;
-    }
-}
+        /* --- NEW MAP STYLES --- */
+        #map { height: 600px; width: 100%; background: #050505; border-radius: 2rem; z-index: 1; }
+        .pulse-icon { background: #3b82f6; border-radius: 50%; box-shadow: 0 0 0 rgba(59, 130, 246, 0.4); animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .leaflet-tile-pane { filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3); }
+        .map-container { background: radial-gradient(circle at center, #1e3a8a 0%, #050505 100%); padding: 60px 20px; border-radius: 4rem; }
     
+    
+   
+    /* Infinite Scroll Up Animation */
+    @keyframes scroll-up {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
 
-/*VIDEO MIMIC*/
-@keyframes video-flash {
-    0%, 30% { opacity: 1; transform: scale(1); }
-    33%, 100% { opacity: 0; transform: scale(1.1); }
-}
+    /* Infinite Scroll Down Animation */
+    @keyframes scroll-down {
+        0% { transform: translateY(-50%); }
+        100% { transform: translateY(0); }
+    }
 
-.animate-video-flash {
-    animation: video-flash 6s infinite;
-    opacity: 0;
-}
+    .animate-scroll-up {
+        animation: scroll-up 20s linear infinite;
+    }
+
+    .animate-scroll-down {
+        animation: scroll-down 20s linear infinite;
+    }
+
+    /* Third column slightly delayed for a more fluid feel */
+    .animate-scroll-up-delayed {
+        animation: scroll-up 25s linear infinite;
+    }
+
+    /* Professional Fade effect at the top and bottom of the images */
+    .mask-fade {
+        mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    }
+
+    .hero-gradient {
+        background: radial-gradient(circle at top right, #1e3a8a, #050505);
+    }
+
     </style>
 </head>
 <body>
@@ -603,6 +632,28 @@
     </div>
 </section>
 
+
+<section class="py-24 px-8">
+    <div class="map-container shadow-2xl border border-white/5">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-blue-400 mb-4">Global Footprint</h2>
+            <h3 class="text-4xl md:text-6xl font-black text-white italic mb-6">Execution Without <span class="text-blue-500">Borders.</span></h3>
+            <p class="text-gray-400 text-lg">From Lagos to London, New York to Tokyo. We deploy world-class strategy and technology across 35+ global nodes.</p>
+        </div>
+
+        <div id="map" class="shadow-2xl"></div>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-12 max-w-5xl mx-auto text-center">
+            <div><p class="text-3xl font-black text-white">10</p><p class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">North America</p></div>
+            <div><p class="text-3xl font-black text-white">7</p><p class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">Africa</p></div>
+            <div><p class="text-3xl font-black text-white">9</p><p class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">Europe</p></div>
+            <div><p class="text-3xl font-black text-white">6</p><p class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">Asia</p></div>
+            <div><p class="text-3xl font-black text-white">3</p><p class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">South America</p></div>
+        </div>
+    </div>
+</section>
+
+
 <footer class="relative bg-black text-white pt-24 pb-12 border-t border-white/5 overflow-hidden">
     <div class="absolute inset-0 z-0 opacity-30">
         <img src="footer-bg.png" class="w-full h-full object-cover" alt="Footer Background">
@@ -674,43 +725,88 @@
 </footer>
 
 
-    <style>
-    /* Infinite Scroll Up Animation */
-    @keyframes scroll-up {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-50%); }
-    }
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Initialize the map centered on the Atlantic
+    const map = L.map('map', {
+        scrollWheelZoom: false // Prevents accidental zooming while scrolling the page
+    }).setView([20, 0], 2);
 
-    /* Infinite Scroll Down Animation */
-    @keyframes scroll-down {
-        0% { transform: translateY(-50%); }
-        100% { transform: translateY(0); }
-    }
+    // Dark-themed tiles using CartoDB Voyager
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: 'Endgame Global'
+    }).addTo(map);
 
-    .animate-scroll-up {
-        animation: scroll-up 20s linear infinite;
-    }
+    // Custom Pulse Icon
+    const pulseIcon = L.divIcon({
+        className: 'pulse-icon',
+        iconSize: [12, 12]
+    });
 
-    .animate-scroll-down {
-        animation: scroll-down 20s linear infinite;
-    }
+    // Client Locations Data
+    const locations = [
+        // Africa (7)
+        { name: "Lagos, Nigeria", coords: [6.5244, 3.3792] },
+        { name: "Nairobi, Kenya", coords: [-1.2921, 36.8219] },
+        { name: "Johannesburg, SA", coords: [-26.2041, 28.0473] },
+        { name: "Accra, Ghana", coords: [5.6037, -0.1870] },
+        { name: "Cairo, Egypt", coords: [30.0444, 31.2357] },
+        { name: "Dakar, Senegal", coords: [14.7167, -17.4677] },
+        { name: "Kigali, Rwanda", coords: [-1.9441, 30.0619] },
 
-    /* Third column slightly delayed for a more fluid feel */
-    .animate-scroll-up-delayed {
-        animation: scroll-up 25s linear infinite;
-    }
+        // North America (10)
+        { name: "New York, USA", coords: [40.7128, -74.0060] },
+        { name: "San Francisco, USA", coords: [37.7749, -122.4194] },
+        { name: "Toronto, Canada", coords: [43.6532, -79.3832] },
+        { name: "Mexico City, MX", coords: [19.4326, -99.1332] },
+        { name: "Chicago, USA", coords: [41.8781, -87.6298] },
+        { name: "Austin, USA", coords: [30.2672, -97.7431] },
+        { name: "Vancouver, Canada", coords: [49.2827, -123.1207] },
+        { name: "Miami, USA", coords: [25.7617, -80.1918] },
+        { name: "Washington DC, USA", coords: [38.9072, -77.0369] },
+        { name: "Los Angeles, USA", coords: [34.0522, -118.2437] },
 
-    /* Professional Fade effect at the top and bottom of the images */
-    .mask-fade {
-        mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-        -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-    }
+        // Europe (9)
+        { name: "London, UK", coords: [51.5074, -0.1278] },
+        { name: "Berlin, Germany", coords: [52.5200, 13.4050] },
+        { name: "Paris, France", coords: [48.8566, 2.3522] },
+        { name: "Amsterdam, NL", coords: [52.3676, 4.9041] },
+        { name: "Dublin, Ireland", coords: [53.3498, -6.2603] },
+        { name: "Madrid, Spain", coords: [40.4168, -3.7038] },
+        { name: "Stockholm, Sweden", coords: [59.3293, 18.0686] },
+        { name: "Geneva, Switzerland", coords: [46.2044, 6.1432] },
+        { name: "Tallinn, Estonia", coords: [59.4370, 24.7536] },
 
-    .hero-gradient {
-        background: radial-gradient(circle at top right, #1e3a8a, #050505);
-    }
+        // Asia (6)
+        { name: "Singapore", coords: [1.3521, 103.8198] },
+        { name: "Tokyo, Japan", coords: [35.6762, 139.6503] },
+        { name: "Dubai, UAE", coords: [25.2048, 55.2708] },
+        { name: "Mumbai, India", coords: [19.0760, 72.8777] },
+        { name: "Seoul, S. Korea", coords: [37.5665, 126.9780] },
+        { name: "Bangkok, Thailand", coords: [13.7563, 100.5018] },
 
-    </style>
+        // South America (3)
+        { name: "São Paulo, Brazil", coords: [-23.5505, -46.6333] },
+        { name: "Bogotá, Colombia", coords: [4.7110, -74.0721] },
+        { name: "Buenos Aires, Argentina", coords: [-34.6037, -58.3816] }
+    ];
+
+    // Add Markers to Map
+    locations.forEach(loc => {
+        L.marker(loc.coords, { icon: pulseIcon })
+            .addTo(map)
+            .bindPopup(`<b style="color:#000">${loc.name}</b><br><span style="color:#666">Endgame Active Project</span>`);
+    });
+
+    // Enable zoom on click (UX improvement)
+    map.on('click', function() {
+        if (map.scrollWheelZoom.enabled()) {
+            map.scrollWheelZoom.disable();
+        } else {
+            map.scrollWheelZoom.enable();
+        }
+    });
+</script>
 
 </body>
 </html>
