@@ -27,17 +27,47 @@
         @keyframes video-flash { 0%, 30% { opacity: 1; transform: scale(1); } 33%, 100% { opacity: 0; transform: scale(1.1); } }
         .animate-video-flash { animation: video-flash 6s infinite; opacity: 0; }
 
-        /* --- NEW MAP STYLES --- */
-        #map { height: 600px; width: 100%; background: #050505; border-radius: 2rem; z-index: 1; }
-        .pulse-icon { background: #3b82f6; border-radius: 50%; box-shadow: 0 0 0 rgba(59, 130, 246, 0.4); animation: pulse 2s infinite; }
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-        }
-        .leaflet-tile-pane { filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3); }
-        .map-container { background: radial-gradient(circle at center, #1e3a8a 0%, #050505 100%); padding: 60px 20px; border-radius: 4rem; }
-    
+
+
+      /* --- NEW MAP STYLES --- */
+#map { 
+    height: 600px; 
+    width: 100%; 
+    background: #050505 !important; /* Forces black background behind the map */
+    border-radius: 2rem; 
+    z-index: 1; 
+}
+
+/* Improved Pulse: Stronger blue and higher z-index */
+.pulse-icon { 
+    background: #3b82f6 !important; 
+    border-radius: 50%; 
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0.8); 
+    animation: pulse 2s infinite; 
+    border: 2px solid white; /* Adds a tiny ring to make it pop */
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+    70% { transform: scale(1.2); box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+/* New Filter: Makes the map dark/premium but keeps blue markers visible */
+.leaflet-tile-pane { 
+    filter: brightness(0.4) invert(1) contrast(1.2) saturate(0.5); 
+}
+
+.map-container { 
+    background: radial-gradient(circle at center, #1e3a8a 0%, #050505 100%); 
+    padding: 60px 20px; 
+    border-radius: 4rem; 
+}
+
+/* Fixes the "grey box" when zooming out */
+.leaflet-container {
+    background: #050505 !important;
+}
     
    
     /* Infinite Scroll Up Animation */
@@ -727,20 +757,28 @@
 
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-    // Initialize the map centered on the Atlantic
+   // Initialize the map with limits to prevent "repeating worlds centred around the Atlantic"
     const map = L.map('map', {
-        scrollWheelZoom: false // Prevents accidental zooming while scrolling the page
+        scrollWheelZoom: false,
+        minZoom: 2,           // Prevents zooming out to see "multiple earths"
+        maxZoom: 10,
+        worldCopyJump: false, // Disables the map repeating side-by-side
+        maxBounds: [[-90, -180], [90, 180]], // Locks the view to one world
+        maxBoundsViscosity: 1.0
     }).setView([20, 0], 2);
 
-    // Dark-themed tiles using CartoDB Voyager
+    // Added 'noWrap: true' to the tile layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
-        attribution: 'Endgame Global'
+        attribution: 'Endgame Global',
+        noWrap: true,      // Stops the map images from repeating
+        bounds: [[-90, -180], [90, 180]]
     }).addTo(map);
 
-    // Custom Pulse Icon
+    // Custom Pulse Icon (Slightly larger for better UI)
     const pulseIcon = L.divIcon({
         className: 'pulse-icon',
-        iconSize: [12, 12]
+        iconSize: [14, 14],
+        iconAnchor: [7, 7] // Centers the icon perfectly on the coordinate
     });
 
     // Client Locations Data
@@ -791,19 +829,20 @@
         { name: "Buenos Aires, Argentina", coords: [-34.6037, -58.3816] }
     ];
 
-    // Add Markers to Map
+   // Add Markers to Map
     locations.forEach(loc => {
         L.marker(loc.coords, { icon: pulseIcon })
             .addTo(map)
             .bindPopup(`<b style="color:#000">${loc.name}</b><br><span style="color:#666">Endgame Active Project</span>`);
     });
 
-    // Enable zoom on click (UX improvement)
+    // Improved Zoom Logic
     map.on('click', function() {
         if (map.scrollWheelZoom.enabled()) {
             map.scrollWheelZoom.disable();
         } else {
             map.scrollWheelZoom.enable();
+            // Optional: alert or visual hint that zoom is now active
         }
     });
 </script>
